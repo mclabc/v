@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Array Manipulation</title>
+</head>
+<body>
+    <h1>Object Array Manipulation</h1>
+
+    <div>
+        <label for="addObject">Add Object:</label>
+        <input type="text" id="addObject">
+        <button onclick="addObject()">Add</button>
+    </div>
+
+    <div>
+        <label for="searchObject">Search Object:</label>
+        <input type="text" id="searchObject">
+        <button onclick="searchObject()">Search</button>
+    </div>
+
+    <div id="output">
+        <h2>Array Contents:</h2>
+        <pre id="arrayContents"></pre>
+        <h2>Search Result:</h2>
+        <p id="searchResult"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+// Initialize an empty array to store objects
+const objectArray = [];
+
+// Function to add an object to the array
+function addObject() {
+    const addObjectInput = document.getElementById("addObject");
+    const newObject = addObjectInput.value;
+
+    // Append the object to the array
+    objectArray.push(newObject);
+    addObjectInput.value = "";
+    updateArrayContents();
+}
+
+// Function to check if an object is in the array
+function searchObject() {
+    const searchObjectInput = document.getElementById("searchObject");
+    const searchValue = searchObjectInput.value;
+    const foundIndex = objectArray.indexOf(searchValue);
+
+    if (foundIndex !== -1) {
+        document.getElementById("searchResult").textContent = "Object found at index " + foundIndex;
+    } else {
+        document.getElementById("searchResult").textContent = "Object not found in the array";
+    }
+}
+
+// Function to update the displayed array contents
+function updateArrayContents() {
+    document.getElementById("arrayContents").textContent = JSON.stringify(objectArray, null, 2);
+}

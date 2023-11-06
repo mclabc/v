@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div">
+        <h1>Area of Triangle</h1>
+        <h3>Enter base of Triangle
+            <input type="number" id="base">  
+        </h3>
+        <h3>Enter height of Triangle
+            <input type="number" id="height">
+        </h3>
+        <button onclick="Triangle()">Result is</button>
+        <p id="result"></p>
+    </div>
+    <div class="div">
+        <h1>Area of Rectangle</h1>
+        <h3>Enter length of Rectangle
+            <input type="number" id="length">  
+        </h3>
+        <h3>Enter breadth of Rectangle
+            <input type="number" id="breadth">
+        </h3>
+        <button onclick="Rectangle()">Result is</button>
+        <p id="result1"></p>
+    </div>
+    <div class="div">
+        <h1>Area of Circle</h1>
+        <h3>Enter radius of Circle
+            <input type="number" id="radius">  
+        </h3>
+        <button onclick="Circle()">Result is</button>
+        <p id="result2"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+function Triangle(){
+    let bases = document.getElementById("base").value;
+    let heights = document.getElementById("height").value;
+    let area = 0.5 * bases*heights;
+    document.getElementById("result").innerHTML=` Area of Triangle is ${area}`;
+}
+function Rectangle(){
+    let lengths = document.getElementById("length").value;
+let breadths = document.getElementById("breadth").value;
+    let area1 =  lengths*breadths;
+    document.getElementById("result1").innerHTML=` Area of Rectangle is ${area1}`;
+}
+function Circle(){
+    let radius1 = document.getElementById("radius").value;
+    let area = 3.14 * radius1 * radius1;
+    document.getElementById("result2").innerHTML=` Area of Circle is ${area}`;
+}

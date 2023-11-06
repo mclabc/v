@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Countdown Timer</h3>
+    <input type="datetime-local" id="s1">
+    <br><br>
+    <button onclick="countdown()">Click</button>
+    <p id="op">Output</p>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+function countdown(){
+    let x = setInterval(function(){
+        let countdowndate = document.getElementById("s1").value;
+        let timer = new Date(countdowndate);
+        let now = new Date().getTime();
+        let distance = timer - now;
+        let day = Math.floor(distance/(1000*60*60*24));
+        let hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+        let minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+        let seconds = Math.floor((distance%(1000*60))/(1000));
+        document.getElementById("op").innerHTML=`timer will end in d:${day} h:${hours} m:${minutes} s:${seconds}`;
+         if(distance<0){
+            clearInterval(x);
+            document.getElementById("op").innerHTML="Expired";
+        }
+    },1000);
+}

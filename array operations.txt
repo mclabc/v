@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title></head>
+<body>
+    <h1>Array Operations</h1>
+    <label for="s1">enter the elements of the array</label>
+    <input type="text"  id="s1"><br><br>
+    <button onclick="arraydisplay()">click</button>
+    <p id="arrdis"></p>
+    <h3>Remove specific element from array</h3>
+    <label for="s2">The element to be removed </label>
+    <input type="text" id="s2"><br><br>
+    <button onclick="removearrayelement()">Remove</button>
+    <p id="remove"> </p>
+    <h3>Check if array contain specific value</h3>
+    <label for="s3">the element to be specified</label>
+    <input type="text" id="s3"><br><br>
+    <button onclick="Checkarray()">check</button>
+    <p id="check"></p>
+    <h3>Empty Array</h3>
+    <button onclick="Emptyarray()">empty</button>
+    <p id="s4"></p>  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+function arraydisplay(){
+    var str = document.getElementById('s1').value;
+    var array = str.split(' ');
+    document.getElementById('arrdis').innerHTML="Given array is : ["+array+"]";
+}
+function removearrayelement(){
+    var str = document.getElementById('s1').value;
+    var array = str.split(' ');
+    var ele = document.getElementById('s2').value;
+    if(array.includes(ele)){
+        var index = array.indexOf(ele);
+        array.splice(index,1);
+        document.getElementById('remove').innerHTML="New array is :["+array+"]";
+    }else{
+        document.getElementById('remove').innerHTML="Given array does not contain this element!"; }}
+function Checkarray(){
+    var str = document.getElementById('s1').value;
+    var array = str.split(' ');
+    var ele = document.getElementById('s3').value;
+    if(array.includes(ele)){
+        var index = array.indexOf(ele);
+        document.getElementById('check').innerHTML="Element is present at index :"+index;
+    }else{
+        document.getElementById('check').innerHTML="Given array does not contain this element!";}}
+function Emptyarray(){
+    var str = document.getElementById('s1').value;
+    var array = str.split(' ');
+    array.length = 0;
+    document.getElementById('s4').innerHTML="Empty Array :["+array+"]";}

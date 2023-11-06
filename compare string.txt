@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>To compare 2 strings using strict equality method</h1>
+    <label for="s1">Enter first string</label>
+    <input type="text" id="s1">
+    <br><br>
+    <label for="s2">Enter second string</label>
+    <input type="text" id="s2">
+    <br><br>
+    <button onclick="comparison()">Output</button>
+    <p id="result"></p>
+    <br><br>
+     <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+function comparison(){
+    let a = document.getElementById("s1").value;
+    let b = document.getElementById("s2").value;
+    if(a===b){
+        document.getElementById("result").innerHTML="The two strings are equal";}
+    else{
+        document.getElementById("result").innerHTML="The two strings are not equal";
+    }}

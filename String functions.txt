@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reverse Function</h1>
+    <h2>Enter the String</h2>
+    <input type="text" id="s1">
+    <br><br>
+    <button onclick="reverse()">Output</button>
+    <p id="result"></p>
+    <br><br>  <h1>Replace characters of a string </h1>
+    <label for="s2">Enter a string</label>
+    <input type="text" id="s2">
+    <br><br>
+    <label for="s3">Enter a string to replace</label>
+    <input type="text" id="s3">
+    <br><br>
+    <label for="s4">Enter a string to replace with</label>
+    <input type="text" id="s4">
+    <br><br>
+    <button onclick="replace()">Output</button>
+    <p id="result2"></p>
+    <br><br><h1>Pallindrome </h1>
+    <label for="s5">Enter the string to check</label>
+    <input type="text" id="s5">
+    <br><br>
+    <button onclick="pallindrome()">Output</button>
+    <p id="result3"></p><script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+function reverse(){
+    let a = document.getElementById("s1").value;
+    let b = a.split("").reverse().join("");
+    document.getElementById("result").innerHTML="Reverse string is : " +b;
+}function replace(){
+    let text = document.getElementById("s2").value;
+    let c = document.getElementById("s3").value;
+    let d = document.getElementById("s4").value;
+    let r = text.replace(c,d);
+    document.getElementById("result2").innerHTML="Replaced String is :"+r;
+}function pallindrome(){
+    let ab = document.getElementById("s5").value;
+    let ty = ab.split("").reverse().join("");
+    if(ab===ty){
+        document.getElementById("result3").innerHTML="The String is Pallindrome";
+    }
+    else{
+        document.getElementById("result3").innerHTML="The String is not Pallindrome";
+    }
+}
